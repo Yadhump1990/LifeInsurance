@@ -1,0 +1,22 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>add_manage_files</title>-->
+<!--</head>-->
+{% extends 'agentindex.html' %}
+{% block body %}
+<body>
+<form method="post" enctype="multipart/form-data" name="form1" id="form1" action="add_files">
+  <h1>Add  files</h1>
+  <p>
+    <label for="fileField">File:</label>
+    <input type="file" name="fileField" id="fileField" required>
+  </p>
+  <p>	
+   <input type="submit" name="submit" id="submit" value="Send">
+  </p>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

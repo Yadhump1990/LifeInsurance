@@ -1,0 +1,34 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>VIEW_REQ_STAUS</title>-->
+<!--</head>-->
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post">
+  <h1>VIEW REQUEST STATUS</h1>
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <th scope="col">POLICY NO</th>
+        <th scope="col">AGENT</th>
+        <th scope="col">DATE</th>
+        <th scope="col">STATUS</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.pid.policyNo}}</td>
+        <td>{{i.pid.aid.name}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.status}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

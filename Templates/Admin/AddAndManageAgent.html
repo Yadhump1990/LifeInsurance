@@ -1,0 +1,47 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>ADD&amp;MANAGE_AGENT</title>-->
+<!--</head>-->
+
+
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post">
+  <h1>ADD &amp; MANAGE AGENT</h1>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="col">AGENT_NAME</th>
+        <th scope="col">PLACE</th>
+        <th scope="col">PIN</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">COMMISION</th>
+        <th scope="col">EXPERIENCE</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.place}}</td>
+        <td>{{i.pin}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.commission_rate}}</td>
+        <td>{{i.experiance}}</td>
+        <td><p><a href="{% url 'editAgent' id=i.id %}" class="btn btn-success">EDIT</a></p>
+        <p><a href="{% url 'deleteAgent' id=i.lid.id %}" class="btn btn-success">DELETE</a></p></td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="7"> <CENTER><a href="add_agent" class="btn btn-info">ADD</a></CENTER></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

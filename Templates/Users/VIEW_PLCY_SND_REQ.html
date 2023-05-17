@@ -1,0 +1,41 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>VIEW_PLCY_SND_REP</title>-->
+<!--</head>-->
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" >
+  <h1>VIEW POLICY AND SEND REQUEST</h1>
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <th scope="col">AGENT</th>
+        <th scope="col">POLICY NO</th>
+        <th scope="col">START_DATE</th>
+        <th scope="col">END_DATE</th>
+        <th scope="col">PREMIUM_AMOUNT</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.aid.name}}</td>
+        <td>{{i.policyNo}}</td>
+        <td>{{i.start_date}}</td>
+        <td>{{i.end_date}}</td>
+        <td>{{i.premium_amount}}</td>
+
+
+        <td> <a href="{% url 'sendplcyreq' id=i.id %}">SEND_REQUEST</a>
+
+
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

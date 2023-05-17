@@ -1,0 +1,37 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>SEND_DOUBT</title>-->
+<!--</head>-->
+{% extends 'userindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="sendDbt">
+  <h1>SEND DOUBT</h1>
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <th scope="row">AGENT</th>
+        <td><label for="select"></label>
+          <select name="select" id="select">
+            {% for i in val %}
+            <option value="{{i.id}}">{{i.name}}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">DOUBT</th>
+        <td><label for="textarea"></label>
+        <textarea name="textarea" id="textarea"></textarea></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><input type="submit" name="submit" id="submit" value="SEND"></th>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

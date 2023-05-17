@@ -1,0 +1,42 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>VIEW_DOUBT_AND_SEND_REPLY</title>-->
+<!--</head>-->
+{% extends 'agentindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post">
+  <h1>VIEW DOUBT AND SEND REPLY</h1>
+  <table width="500" border="1">
+    <tbody>
+      <tr>
+        <th scope="col">USER</th>
+        <th scope="col">DOUBT</th>
+        <th scope="col">DATE</th>
+        <th scope="col">REPLY</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.uid.fname}}{{i.uid.lname}}</td>
+        <td>{{i.doubt}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.reply}}</td>
+        <td>{% if i.reply == 'pending' %}
+
+            <a href="{% url 'doubt_reply' id=i.id %}">REPLY</a>
+            {% else %}
+              repiled
+            {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

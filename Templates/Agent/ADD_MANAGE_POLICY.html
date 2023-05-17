@@ -1,0 +1,41 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>ADD&amp;MANAGEPOLICY</title>-->
+<!--</head>-->
+{% extends 'agentindex.html' %}
+{% block body %}
+<body>
+	<form>
+	  <h1>ADD &amp; MANAGE POLICY</h1>
+	  <table width="200" border="1">
+	    <tbody>
+	      <tr>
+	        <th scope="col">POLICY NO</th>
+	        <th scope="col">START_DATE</th>
+	        <th scope="col">END_DATE</th>
+	        <th scope="col">PREMIUM_AMOUNT</th>
+	        <th scope="col">COMMISION</th>
+	        <th scope="col">&nbsp;</th>
+          </tr>
+		  {% for i in val %}
+	      <tr>
+	        <td>{{i.policyNo}}</td>
+	        <td>{{i.start_date}}</td>
+	        <td>{{i.end_date}}</td>
+	        <td>{{i.premium_amount}}</td>
+	        <td>{{i.commission}}</td>
+	        <td><p><a href="{% url 'editPolicy' id=i.id %}">EDIT</a></p>
+            <p><a href="{% url 'delPolicy' id=i.id %}">DELETE</a></p></td>
+          </tr>
+		  {% endfor %}
+	      <tr>
+	        <td colspan="6"><CENTER><a href="add_policy">ADD</a></CENTER></td>
+          </tr>
+        </tbody>
+      </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

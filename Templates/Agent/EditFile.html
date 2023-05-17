@@ -1,0 +1,23 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>add_manage_files</title>-->
+<!--</head>-->
+{% extends 'agentindex.html' %}
+{% block body %}
+<body>
+<form method="post" enctype="multipart/form-data" name="form1" id="form1" action="{% url 'updateFile' %}">
+  <h1>Edit files</h1>
+  <p>
+    <label for="fileField">File:</label>
+    <input type="file" name="fileField" id="fileField" value="{{val.file.url}}">{{val.file.url}}
+  </p>
+  <p>	
+   <input type="submit" name="submit" id="submit" value="update">
+  </p>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
+

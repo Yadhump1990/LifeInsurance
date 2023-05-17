@@ -1,0 +1,46 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>add_policy</title>-->
+<!--</head>-->
+{% extends 'agentindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="addPolicy">
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <th scope="row">POLICY NO</th>
+        <td><label for="textfield"></label>
+        <input type="text" name="policyNo" id="textfield" required pattern="[A-Z]{2}-[0-9]{6}-[A-Z0-9]{2}" title="Please enter a valid policy number in the format XX-123456-YY, where XX are two uppercase letters, 123456 are six digits, and YY are two uppercase letters or digits."></td>
+      </tr>
+      <tr>
+        <th scope="row">START_DATE</th>
+        <td><label for="date"></label>
+        <input type="date" name="sDate" id="date" required></td>
+      </tr>
+      <tr>
+        <th scope="row">END_DATE</th>
+        <td><label for="date2"></label>
+        <input type="date" name="eDate" id="date2" required></td>
+      </tr>
+      <tr>
+        <th scope="row">PREMIUM_AMOUNT</th>
+        <td><label for="number"></label>
+        <input type="number" name="amount" id="number" min="0" step="0.01" required></td>
+      </tr>
+      <tr>
+        <th scope="row">COMMISSION</th>
+        <td><label for="number2"></label>
+        <input type="number" name="comm" id="number2" min="0" step="0.01" required></td>
+      </tr>
+      <tr>
+        <th colspan="2" scope="row"><input type="submit" name="submit" id="submit" value="add"></th>
+      </tr>
+    </tbody>
+  </table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

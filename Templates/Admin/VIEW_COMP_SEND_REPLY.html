@@ -1,0 +1,45 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>VIEW_COMP&amp;SEND_REPLY</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post">
+  <h1>VIEW COMPLAINT AND SEND REPLY</h1>
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <th scope="col">USER</th>
+        <th scope="col">COMPLAINT</th>
+        <th scope="col">REPLY</th>
+        <th scope="col">DATE</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+      {% for i in val %}
+      <tr>
+        <td>{{i.uid.fname}} {{i.uid.lname}}</td>
+        <td>{{i.complaint}}</td>
+        <td>{{i.reply}}</td>
+        <td>{{i.date}}</td>
+
+        <td>{% if i.reply == 'pending' %}
+
+          <a href="{% url 'send_reply' id=i.id %}">REPLY</a>
+
+          {% else %}
+            done
+          {% endif %}
+        </td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

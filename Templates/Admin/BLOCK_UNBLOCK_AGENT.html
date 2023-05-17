@@ -1,0 +1,39 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>BLOCKuNBLOCKaGENT</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+	<form>
+	  <h1>BLOCK/UNBLOCK AGENT</h1>
+	  <table width="200" border="1">
+  <tbody>
+    <tr>
+      <th scope="col">AGENT_NAME</th>
+      <th scope="col">CONTACT</th>
+      <th scope="col">COMMISION</th>
+      <th scope="col">EXPERIANCE</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.place}} {{i.pin}}</td>
+      <td>{{i.commission_rate}}</td>
+      <td>{{i.experiance}}</td>
+      <td>
+        {% if i.lid.type == 'agent' %}
+        <p><a href="{% url 'blockAgent' id=i.lid.id %}">BLOCK</a></p>
+        {% else %}
+        <p><a href="{% url 'unblockAgent' id=i.lid.id %}">UNBLOCK</a></p></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->

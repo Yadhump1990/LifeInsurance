@@ -1,0 +1,52 @@
+<!--<!doctype html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<title>ADDAGENT</title>-->
+<!--</head>-->
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" action="{% url 'updateAgent' %}" method="post">
+  <table width="200" border="1">
+    <tbody>
+      <tr>
+        <th scope="row">AGENT_NAME</th>
+        <td><input type="text" name="agentName" id="textfield" value="{{ val.name}}"></td>
+      </tr>
+
+      <tr>
+        <th scope="row">PLACE</th>
+        <td><label for="textfield5"></label>
+        <input type="text" name="agPlace" id="textfield5" value="{{val.place}}"></td>
+      </tr>
+      <tr>
+        <th scope="row">PIN</th>
+        <td><label for="textfield6"></label>
+        <input type="text" name="agPin" id="textfield6" value="{{val.pin}}"></td>
+      </tr>
+      <tr>
+        <th scope="row">EMAIL</th>
+        <td><label for="email"></label>
+        <input type="email" name="agEmail" id="email" value="{{val.email}}"></td>
+      </tr>
+      <tr>
+        <th scope="row">COMMISSION_RATE</th>
+        <td><input type="text" name="agentCommission" id="textfield3" value="{{val.commission_rate}}"></td>
+      </tr>
+      <tr>
+        <th scope="row">EXPERIANCE</th>
+        <td><input type="text" name="agentExp" id="textfield4" value="{{val.experiance}}"></td>
+      </tr>
+
+      <tr>
+        <th colspan="2" scope="row"><input type="submit" name="submit" id="submit" value="update"></th>
+      </tr>
+    </tbody>
+  </table>
+  <h1>&nbsp;</h1>
+</form>
+</body>
+{% endblock %}
+<!--</html>-->
+
