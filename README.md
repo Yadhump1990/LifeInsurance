@@ -26,4 +26,5 @@ Users modules contain:
 - Send feedback and rating
 - View policy and sent request
 - View request status
-- Logout authentication
+
+Logout authentication
